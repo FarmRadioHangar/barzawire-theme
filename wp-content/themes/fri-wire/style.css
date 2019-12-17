@@ -1,0 +1,132 @@
+/*
+Theme Name: Barza Wire Theme
+Author: Farm Radio International
+Author URI: https://farmradio.org/
+Version: 1.0.0
+Template: html5blank-stable
+*/
+
+/* Typography */
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Language Nav */
+
+nav.wirefm-language-nav {
+    background-color: rgb(120, 153, 0);
+    font-size: 0.8em;
+    min-height: 43px;
+}
+
+nav.wirefm-language-nav .nav .nav-item {
+    text-transform: uppercase;
+}
+
+.wirefm-language-nav .nav .nav-item a {
+    color: rgba(255, 255, 255, 0.9);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.wirefm-language-nav .nav .nav-item:first-child a {
+    border: none !important;
+}
+
+.wirefm-language-nav .nav .nav-item a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Main Nav */
+
+.navbar-nav .nav-link {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.wirefm-main-nav {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    top: -1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 69px;
+}
+
+.wirefm-main-nav .navbar-nav .nav-item {
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.wirefm-main-nav .navbar-nav .nav-item.active {
+    border-bottom: 5px solid rgb(74, 149, 180);
+}
+
+.wirefm-main-nav .navbar-brand {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(120, 153, 0);
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+.wirefm-main-nav .navbar-brand:hover {
+    color: rgb(61, 76, 7);
+}
+
+.wirefm-main-nav .navbar-toggler {
+    outline: none;
+    border-radius: 0;
+}
+
+@media (max-width: 991px) {
+    .wirefm-main-nav .navbar-nav .nav-item {
+        padding: 1em 0 0.65em;
+    }
+
+    .wirefm-main-nav nav.navbar {
+        margin-top: 11px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1219px) {
+    .wirefm-main-nav nav.navbar ul {
+        flex-direction: column;
+        margin-left: 1em !important;
+        margin-bottom: 0.5em !important;
+    }
+
+    .wirefm-main-nav .navbar-nav .nav-item {
+        min-height: 44px;
+    }
+}
+
+@media (min-width: 992px) {
+    .wirefm-main-nav .navbar-nav .nav-item {
+        margin: 0 1.1em;
+    }
+
+    .wirefm-main-nav nav.navbar,
+    .wirefm-main-nav nav.navbar .container-fluid,
+    .wirefm-main-nav nav.navbar .container-fluid .navbar-collapse,
+    .wirefm-main-nav nav.navbar .container-fluid .navbar-collapse ul {
+        height: 100%;
+    }
+
+    .wirefm-main-nav nav.navbar .container-fluid .navbar-collapse ul {
+        padding-top: 15px;
+    }
+}
+
+/* Search Form */
+
+form.wirefm-search-form {
+    width: 100%;
+    align-self: center;
+}
+
+.wirefm-form-control {
+    height: 30px;
+    border-radius: 0;
+    font-size: 0.85em;
+}
