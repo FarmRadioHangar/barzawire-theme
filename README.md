@@ -1,1 +1,0 @@
-# barzawire-theme
