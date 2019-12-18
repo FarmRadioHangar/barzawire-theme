@@ -9,7 +9,24 @@
       <div class="row">
         <div class="col-12 p-0">
 
-          <?php get_template_part( 'carousel' ); ?>
+          <div id="wirefm_carouselIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#wirefm_carouselIndicators" data-slide-to=0" class="active"></li>
+              <li data-target="#wirefm_carouselIndicators" data-slide-to=1"></li>
+              <li data-target="#wirefm_carouselIndicators" data-slide-to=2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+            <?php Theme::carousel() ?>
+            </div>
+            <a class="carousel-control-prev" href="#wirefm_carouselIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#wirefm_carouselIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
         </div>
       </div>
@@ -31,14 +48,14 @@
           <div class="col-lg-9">
 
             <div class="row featured-top">
-              <?php echo wire_category_posts( array( 'show_excerpt' => false, 'limit' => 2, 'before' => '<div class="col-lg-6 pb-4">', 'after' => '</div>' ) ); ?>
+              <?php //echo wire_category_posts( array( 'show_excerpt' => false, 'limit' => 2, 'before' => '<div class="col-lg-6 pb-4">', 'after' => '</div>' ) ); ?>
             </div>
 
             <div class="row">
 
               <div class="col-12">
 
-                <?php get_template_part( 'feature-box' ); ?>
+                <?php //get_template_part( 'feature-box' ); ?>
 
               </div>
 
@@ -70,7 +87,7 @@
               <?php _e( 'Resources', 'wire' ); ?>
             </h3>
 
-            <?php echo wire_category_posts( array( 'image_height' => 200, 'category' => 'resources-en' ) ); ?>
+            <?php //echo wire_category_posts( array( 'image_height' => 200, 'category' => 'resources-en' ) ); ?>
 
           </div>
 
@@ -80,7 +97,7 @@
               <?php _e( 'Opportunities', 'wire' ); ?>
             </h3>
 
-            <?php echo wire_category_posts( array( 'image_height' => 200, 'category' => 'opportunities' ) ); ?>
+            <?php //echo wire_category_posts( array( 'image_height' => 200, 'category' => 'opportunities' ) ); ?>
 
           </div>
 
@@ -90,7 +107,7 @@
               <?php _e( 'YenKasa', 'wire' ); ?>
             </h3>
 
-            <?php echo wire_category_posts( array( 'image_height' => 200, 'category' => 'yenkasa' ) ); ?>
+            <?php //echo wire_category_posts( array( 'image_height' => 200, 'category' => 'yenkasa' ) ); ?>
 
           </div>
 

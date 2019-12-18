@@ -48,6 +48,34 @@ class Theme
         }
     }
 
+    function carousel()
+    {
+        $posts = get_posts( array(
+            'numberposts' => 3,
+            'post_type' => array( 'farmer-stories', 'resources', 'weeks-script', 'opportunities', 'archives', 'spotlights', 'news', 'yenkasa' )
+        )); 
+
+        $i = 0;
+
+        foreach ($posts as $post)
+        {
+            $thumbnail_url = get_the_post_thumbnail_url( $post->ID );
+
+            if ( empty( $thumbnail_url ) ) {
+                $thumbnail_url = get_stylesheet_directory_uri() . '/images/carousel-default.jpeg';
+            }
+
+            set_query_var( 'active_class', 0 === $i ? 'active' : '' );
+            set_query_var( 'thumbnail_url', $thumbnail_url );
+            set_query_var( 'guid', $post->guid );
+            set_query_var( 'title', $post->post_title );
+
+            get_template_part( 'carousel_item' );
+
+            ++$i;
+        }
+    }
+
     /**
      * Register widget areas used for sidebars and various elements of the
      * page footer.

@@ -90,7 +90,7 @@ nav.wirefm-language-nav .nav .nav-item {
     top: -1px;
     padding-top: 0;
     padding-bottom: 0;
-    min-height: 69px;
+    min-height: 70px;
 }
 
 .wirefm-main-nav .navbar-nav .nav-item {
@@ -191,7 +191,7 @@ form.wirefm-search-form {
     color: rgba(0, 0, 0, 0.8);
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .wirefm-page-footer .site-info {
         border-left: 3px solid rgb(74,149,180);
         padding-left: 2em;
@@ -199,7 +199,7 @@ form.wirefm-search-form {
 }
 
 .footer-copyright {
-    background: white; 
+    background: white;
     font-size: 0.8em;
     color: rgba(0, 0, 0, 0.5);
 }
@@ -222,10 +222,10 @@ form.wirefm-search-form {
 /* Loop */
 
 .wire-loop-thumbnail-container {
-    position: relative; 
-    background-position: center; 
-    height: 280px; 
-    background-size: cover; 
+    position: relative;
+    background-position: center;
+    height: 280px;
+    background-size: cover;
 }
 
 .wirefm-article-list article {
@@ -235,8 +235,8 @@ form.wirefm-search-form {
 /* Category Page */
 
 .wirefm-category-title {
-    margin: 0; 
-    background-color: #4a95b4; 
+    margin: 0;
+    background-color: #4a95b4;
     padding: 2em 0;
 }
 
@@ -248,15 +248,15 @@ form.wirefm-search-form {
 /* Post */
 
 .wirefm-post-image {
-    min-height: 300px; 
-    background-size: cover; 
+    min-height: 300px;
+    background-size: cover;
     background-position: center;
 }
 
 .wirefm-post-title {
-    margin-top: -300px; 
-    padding-top: 150px; 
-    padding-bottom: 3em; 
+    margin-top: -300px;
+    padding-top: 150px;
+    padding-bottom: 3em;
     min-height: 330px;
 }
 
@@ -283,8 +283,8 @@ article p.country {
     margin-bottom: 0;
 }
 
-article .wirefm-post-title h1, 
-article .wirefm-post-title p, 
+article .wirefm-post-title h1,
+article .wirefm-post-title p,
 article .wirefm-post-title h1 a {
     color: white;
     line-height: 1.1;
@@ -297,4 +297,67 @@ article h2 {
     margin: 0.4em 0 0.5em;
     line-height: 1;
     color: #789900;
+}
+
+/* Carousel */
+
+.carousel {
+    width: 100%;
+}
+
+.carousel-indicators {
+    top: 30px;
+    bottom: unset;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.carousel .overlay {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.carousel .overlay .box {
+    border: 3px solid white;
+    color: white;
+    padding: 3em 2.8em 2.1em;
+    max-width: 600px;
+}
+
+.carousel .overlay .caption {
+    bottom: 3em;
+    padding: 6em 8em 3em 8em;
+}
+
+.carousel .overlay p.intro {
+    font-size: 2.2em;
+    line-height: 1.3em;
+    font-family: 'Rokkitt', serif;
+    font-weight: 300;
+}
+
+@media (max-width: 767px) {
+    .carousel .overlay {
+        padding: 2em 5em 5em 5em;
+        font-size: 0.8em;
+    }
+
+    .carousel .overlay .caption {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel .overlay .caption {
+        padding-left: 10em;
+    }
 }
