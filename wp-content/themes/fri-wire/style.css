@@ -8,8 +8,47 @@ Template: html5blank-stable
 
 /* Typography */
 
-* {
+body, p, ul li {
     font-family: 'Open Sans', sans-serif;
+}
+
+h1.main {
+    font-family: 'Rokkitt', serif;
+    font-weight: 200;
+    font-size: 3em;
+    color: #777;
+}
+
+a, a:hover {
+    color: #4a95b4;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0b5a7b;
+}
+
+.smaller p {
+    font-size: 0.95em;
+}
+
+a.read-more {
+    border: 2px solid #68a6c0;
+    padding: 1em 1.1em;
+    margin-top: 1em;
+    line-height: 400%;
+}
+
+h4 {
+  font-family: 'Rokkitt', serif;
+  font-weight: 200;
+  font-size: 1.9em;
+  line-height: 1em;
+  margin-bottom: 0.3em;
+}
+
+.solid-box h4, .solid-box h4 a {
+  color: white;
 }
 
 /* Language Nav */
@@ -68,6 +107,7 @@ nav.wirefm-language-nav .nav .nav-item {
     color: rgb(120, 153, 0);
     font-weight: 100;
     font-size: 1.5em;
+    line-height: 1.6;
 }
 
 .wirefm-main-nav .navbar-brand:hover {
@@ -89,7 +129,7 @@ nav.wirefm-language-nav .nav .nav-item {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1219px) {
+@media (min-width: 992px) and (max-width: 1319px) {
     .wirefm-main-nav nav.navbar ul {
         flex-direction: column;
         margin-left: 1em !important;
@@ -129,4 +169,132 @@ form.wirefm-search-form {
     height: 30px;
     border-radius: 0;
     font-size: 0.85em;
+}
+
+/* Footer */
+
+.wirefm-social-footer {
+    padding: 1em 0;
+    background-color: rgba(48, 48, 48, 1);
+}
+
+.wirefm-social-footer a.icon {
+    margin: 0 0.3em;
+}
+
+.wirefm-social-footer a.icon img {
+    width: 36px;
+}
+
+.wirefm-page-footer {
+    background-color: #554ab41f;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) { 
+    .wirefm-page-footer .site-info {
+        border-left: 3px solid rgb(74,149,180);
+        padding-left: 2em;
+    }
+}
+
+.footer-copyright {
+    background: white; 
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.wirefm-page-footer h5 {
+    font-weight: bold;
+}
+
+/* Color Helpers */
+
+.wirefm-blue {
+    color: #4a95b4;
+}
+
+
+.wirefm-green {
+    color: #789900;
+}
+
+/* Loop */
+
+.wire-loop-thumbnail-container {
+    position: relative; 
+    background-position: center; 
+    height: 280px; 
+    background-size: cover; 
+}
+
+.wirefm-article-list article {
+    margin-top: 2em;
+}
+
+/* Category Page */
+
+.wirefm-category-title {
+    margin: 0; 
+    background-color: #4a95b4; 
+    padding: 2em 0;
+}
+
+.wirefm-category-title .container h1.main {
+    color: white;
+    line-height: 1.6;
+}
+
+/* Post */
+
+.wirefm-post-image {
+    min-height: 300px; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.wirefm-post-title {
+    margin-top: -300px; 
+    padding-top: 150px; 
+    padding-bottom: 3em; 
+    min-height: 330px;
+}
+
+article .post-box {
+    background-color: #4a95b4;
+    text-align: left;
+    max-width: 600px;
+    padding: 1.2em 3em 1.5em 2.1em;
+}
+
+article .post-box h1, article p.country {
+    font-family: 'Rokkitt', serif;
+    font-weight: 300;
+    font-size: 2.6em;
+    line-height: 1em;
+}
+
+article .post-box h1 {
+    margin: 0;
+}
+
+article p.country {
+    padding-bottom: 0.2em;
+    margin-bottom: 0;
+}
+
+article .wirefm-post-title h1, 
+article .wirefm-post-title p, 
+article .wirefm-post-title h1 a {
+    color: white;
+    line-height: 1.1;
+}
+
+article h2 {
+    font-family: 'Rokkitt', serif;
+    font-size: 2em;
+    font-weight: 200;
+    margin: 0.4em 0 0.5em;
+    line-height: 1;
+    color: #789900;
 }

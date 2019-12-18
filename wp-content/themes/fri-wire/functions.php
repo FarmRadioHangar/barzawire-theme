@@ -27,6 +27,67 @@ class Theme
 
         $this->add_taxonomy ( 'issues', 'Issue', 'issue' );
         $this->add_taxonomy ( 'country', 'Country', 'country' );
+
+        $this->register_widget_areas();
+    }
+
+    function thumbnail_url() 
+    {
+        if ( has_post_thumbnail() ) {
+            echo get_the_post_thumbnail_url();
+        } else {
+            echo get_stylesheet_directory_uri() . '/images/post-default.jpeg';
+        } 
+    }
+
+    function thumbnail_country()
+    {
+        $country = get_post_meta( get_the_ID(), 'Country', true );
+        if ( $country ) {
+            echo '<div class="wire-country-tag">' . $country . '</div>';
+        }
+    }
+
+    /**
+     * Register widget areas used for sidebars and various elements of the
+     * page footer.
+     */
+    function register_widget_areas()
+    {
+        if ( function_exists( 'register_sidebar' ) )
+        {
+            register_sidebar(array(
+                'name'              => __('Barza Contact Info', 'wire'),
+                'before_widget'     => '<div id="%1$s" class="%2$s">',
+                'after_widget'      => '</div>',
+                'before_title'      => '<h5>',
+                'after_title'       => '</h5>'
+            ));
+
+            register_sidebar(array(
+                'name'              => __('Barza Site Info', 'wire'),
+                'before_widget'     => '<div id="%1$s" class="%2$s">',
+                'after_widget'      => '</div>',
+                'before_title'      => '<h5>',
+                'after_title'       => '</h5>'
+            ));
+
+            register_sidebar(array(
+                'name'              => __('Barza Copyright', 'wire'),
+                'before_widget'     => '<span>',
+                'after_widget'      => '</span>',
+                'before_title'      => '',
+                'after_title'       => ''
+            ));
+
+            register_sidebar(array(
+                'name'              => __('Barza Front Sidebar', 'wire'),
+                'before_widget'     => '<span>',
+                'after_widget'      => '</span>',
+                'before_title'      => '',
+                'after_title'       => ''
+            ));
+        }
     }
 
     /**
