@@ -1,26 +1,18 @@
 		<!-- footer -->
-		<footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
-      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
-      </a>
-      <a class="icon" href="https://twitter.com/BarzaFm">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
-      </a>
-		</footer>
     <footer class="wirefm-page-footer page-footer py-4">
-      <div class="container-fluid text-center text-md-left">
-        <div class="row justify-content-around">
-          <div class="col-md-4 ml-3 mt-md-0 mt-3">
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("barza-contact-info") ); ?>
-          </div>
-          <hr class="clearfix w-100 d-md-none pb-3">
-          <div class="site-info col-md-4 mb-md-0 mb-3">
+      <div class="container text-center text-md-left">
+        <div class="row justify-content-between">
+          <div class="col-md-6 mb-md-0 mb-3">
             <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("barza-site-info") ); ?>
             <div>
               <a href="https://creativecommons.org/licenses/by-sa/4.0/">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/by-sa.png" style="height: 40px;">
               </a>
             </div>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-4 ml-3 mt-md-0 mt-3">
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("barza-contact-info") ); ?>
           </div>
         </div>
       </div>
@@ -35,6 +27,14 @@
         </div>
       </div>
     </div>
+		<footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
+      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
+      </a>
+      <a class="icon" href="https://twitter.com/BarzaFm">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
+      </a>
+		</footer>
 		<!-- /footer -->
 		<?php wp_footer(); ?>
 		<!-- analytics -->

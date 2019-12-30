@@ -236,28 +236,21 @@ form.wirefm-search-form {
 /* Footer */
 
 .wirefm-social-footer {
-  padding: 1em 0;
+  padding: 1.5em 0;
   background-color: rgba(48, 48, 48, 1);
 }
 
 .wirefm-social-footer a.icon {
-  margin: 0 0.3em;
+  margin: 0 0.5em;
 }
 
 .wirefm-social-footer a.icon img {
-  width: 36px;
+  width: 40px;
 }
 
 .wirefm-page-footer {
   background-color: #554ab41f;
   color: rgba(0, 0, 0, 0.8);
-}
-
-@media (min-width: 768px) {
-  .wirefm-page-footer .site-info {
-    border-left: 3px solid rgb(74,149,180);
-    padding-left: 2em;
-  }
 }
 
 .footer-copyright {
