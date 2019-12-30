@@ -7,8 +7,11 @@ class Theme
      */
     function __construct()
     {
-        add_action( 'after_setup_theme', array( $this, 'init' ) );
-        add_action( 'wp_enqueue_scripts', array ( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
+        add_action( 'init', array( $this, 'init' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
+        add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
+        add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
+        add_action( 'pre_get_posts', array( $this, 'custom_post_types_archive' ) );
     }
 
     /**
@@ -29,31 +32,138 @@ class Theme
         $this->add_taxonomy ( 'country', 'Country', 'country' );
 
         $this->register_widget_areas();
+
+        add_theme_support( 'infinite-scroll', array(
+            'container' => 'content',
+            'render'    => array( $this, 'infinite_scroll_render' ),
+            'footer'    => 'page'
+        ) );
+
+        add_filter( 'infinite_scroll_credit', array( $this, 'infinite_scroll_credit' ) );
+        add_filter( 'query_vars', array( $this, 'add_query_var' ) );
     }
 
-    function thumbnail_url() 
+    function add_query_var( $vars )
+    {
+        $vars[] = 'country_name';
+        return $vars;
+    }
+
+    function thumbnail_url()
     {
         if ( has_post_thumbnail() ) {
             echo get_the_post_thumbnail_url();
         } else {
             echo get_stylesheet_directory_uri() . '/images/post-default.jpeg';
-        } 
+        }
     }
 
     function thumbnail_country()
     {
         $country = get_post_meta( get_the_ID(), 'Country', true );
+
         if ( $country ) {
-            echo '<div class="wire-country-tag">' . $country . '</div>';
+            echo '<a href="/country?country_name=' . $country . '"><div class="wire-country-tag">' . $country . '</div></a>';
         }
+    }
+
+
+    function frontpage_category_posts( $options = array() )
+    {
+        $defaults = array(
+            'limit'          => 1,
+            'before'         => '<div>',
+            'after'          => '</div>',
+            'before_article' => '<div>',
+            'after_article'  => '</div>',
+            'show_thumbnail' => true,
+            'show_excerpt'   => true,
+            'show_tags'      => true,
+            'image_height'   => 280
+        );
+
+        $opts = array_merge( $defaults, $options );
+
+        $posts = get_posts( array(
+            'post_type'   => $opts['post_type'],
+            'numberposts' => $opts['limit']
+        ));
+
+        foreach ($posts as $post)
+        {
+            $thumbnail_url = get_the_post_thumbnail_url( $post->ID );
+
+            if ( empty( $thumbnail_url ) ) {
+                $thumbnail_url = get_stylesheet_directory_uri() . '/images/post-default.jpeg';
+            }
+
+            set_query_var( 'thumbnail_url', $thumbnail_url );
+            set_query_var( 'image_height', $opts['image_height'] );
+            set_query_var( 'show_thumbnail', $opts['show_thumbnail'] );
+            set_query_var( 'show_tags', $opts['show_tags'] );
+            set_query_var( 'tags', Theme::get_tags( $post->ID ) );
+            set_query_var( 'title', $post->post_title );
+            set_query_var( 'excerpt', Theme::get_excerpt( $post->ID ) );
+            set_query_var( 'show_excerpt', $opts['show_excerpt'] );
+            set_query_var( 'guid', $post->guid );
+            set_query_var( 'before_article', $opts['before_article'] );
+            set_query_var( 'after_article', $opts['after_article'] );
+
+            echo $opts['before'];
+            get_template_part( 'front-page-category-story' );
+            echo $opts['after'];
+        }
+    }
+
+    function get_excerpt( $post_id = NULL)
+    {
+        if ( empty( $post_id ) ) {
+            $post_id = get_the_ID();
+        }
+
+        add_filter( 'excerpt_length', 'Theme::excerpt_length' );
+
+        $output = get_the_excerpt( $post_id );
+        $output = apply_filters('wptexturize', $output);
+        $output = apply_filters('convert_chars', $output);
+
+        return $output;
+    }
+
+    function excerpt_length()
+    {
+        return 20;
+    }
+
+    function get_tags( $post_id = NULL )
+    {
+        if ( empty( $post_id ) ) {
+            $post_id = get_the_ID();
+        }
+
+        return wp_get_post_tags( $post_id );
+    }
+
+    function get_country( $post_id = NULL )
+    {
+        if ( empty( $post_id ) ) {
+            $post_id = get_the_ID();
+        }
+
+        return get_post_meta( $post_id, 'Country', true );
+    }
+
+    function excerpt()
+    {
+        echo Theme::get_excerpt();
     }
 
     function carousel()
     {
         $posts = get_posts( array(
             'numberposts' => 3,
-            'post_type' => array( 'farmer-stories', 'resources', 'weeks-script', 'opportunities', 'archives', 'spotlights', 'news', 'yenkasa' )
-        )); 
+            'post_type'   => Theme::post_types()
+        ));
 
         $i = 0;
 
@@ -65,14 +175,33 @@ class Theme
                 $thumbnail_url = get_stylesheet_directory_uri() . '/images/carousel-default.jpeg';
             }
 
-            set_query_var( 'active_class', 0 === $i ? 'active' : '' );
+            set_query_var( 'active_class', 0 === $i++ ? 'active' : '' );
             set_query_var( 'thumbnail_url', $thumbnail_url );
             set_query_var( 'guid', $post->guid );
             set_query_var( 'title', $post->post_title );
 
-            get_template_part( 'carousel_item' );
+            get_template_part( 'carousel-item' );
+        }
+    }
 
-            ++$i;
+    function infinite_scroll_render()
+    {
+        if ( is_search() ) {
+            get_template_part( 'searchloop' );
+        } else {
+            get_template_part( 'loop' );
+        }
+    }
+
+    function infinite_scroll_credit()
+    {
+        return '<div>' . __( 'A service of Farm Radio International' ) . '</div>';
+    }
+
+    function custom_post_types_archive( $query )
+    {
+        if ( ( $query->is_tag() || $query->is_author() ) && $query->is_main_query() ) {
+            $query->set( 'post_type', array_merge( array( 'post', 'object' ), Theme::post_types() ) );
         }
     }
 
@@ -130,6 +259,8 @@ class Theme
         if ( NULL === $singular_name ) {
             $singular_name = $name;
         }
+        register_taxonomy_for_object_type( 'category', $post_type );
+        register_taxonomy_for_object_type( 'post_tag', $post_type );
         register_post_type( $post_type,
             array(
                 'labels' => array(
@@ -137,11 +268,13 @@ class Theme
                     'singular_name' => __( $singular_name )
                 ),
                 'public'            => true,
+                'show_ui'           => true,
                 'has_archive'       => true,
-                'taxonomies'        => array( 'post_tag' ),
+                'rewrite'           => array( 'slug' => $post_type ),
+                'taxonomies'        => array( 'category', 'post_tag' ),
                 'show_in_rest'      => true,
                 'show_in_nav_menus' => true,
-                'supports'          => array( 'title', 'editor', 'thumbnail', 'author' )
+                'supports'          => array( 'title', 'editor', 'thumbnail', 'author', 'excerpt', 'custom-fields', 'page-attributes' )
             )
         );
     }
@@ -155,18 +288,7 @@ class Theme
      */
     function add_taxonomy( $taxonomy, $label, $slug )
     {
-        register_taxonomy(
-            $taxonomy,
-            array(
-                'farmer-stories',
-                'news',
-                'resources',
-                'spotlights',
-                'weeks-script',
-                'opportunities',
-                'archives',
-                'yenkasa'
-            ),
+        register_taxonomy( $taxonomy, Theme::post_types(),
             array(
                 'label'             => __( $label ),
                 'rewrite'           => array( 'slug' => $slug ),
@@ -231,6 +353,23 @@ class Theme
         );
     }
 
+    function country_posts( $country )
+    {
+        $query_args = array(
+            'post_type'      => Theme::post_types(),
+            'posts_per_page' => -1,
+            'meta_query'     => array(
+                array(
+                    'value'   => $country,
+                    'compare' => '=',
+                    'key'     => 'Country',
+                ),
+            )
+        );
+
+        return new WP_Query($query_args);
+    }
+
     /**
      * Register the theme's stylesheet
      */
@@ -240,6 +379,26 @@ class Theme
         wp_deregister_style( 'html5blank' );
 
         wp_enqueue_style( 'wire', get_stylesheet_directory_uri() . '/style.css' );
+    }
+
+    function jetpack_remove_share()
+    {
+        remove_filter( 'the_content', 'sharing_display', 19 );
+        remove_filter( 'the_excerpt', 'sharing_display', 19 );
+
+        if ( class_exists( 'Jetpack_Likes' ) ) {
+            remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+        }
+    }
+
+    function remove_parent_filters()
+    {
+        remove_filter( 'excerpt_more', 'html5_blank_view_article' );
+    }
+
+    function post_types()
+    {
+        return array( 'farmer-stories', 'resources', 'weeks-script', 'opportunities', 'archives', 'spotlights', 'news', 'yenkasa' );
     }
 }
 

@@ -1,7 +1,5 @@
 <?php if (have_posts()): ?>
-
   <?php while (have_posts()) : the_post(); ?>
-
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="row mb-4">
@@ -21,17 +19,14 @@
           </h4>
           <!-- /post title -->
           <div class="smaller">
-            <?php wire_excerpt(); ?>
+            <?php Theme::excerpt(); ?>
           </div>
         </div>
       </div>
     </article>
     <!-- /article -->
-
   <?php endwhile; ?>
-
 <?php else: ?>
-
   <div class="col col-12 col-lg-6 pb-5">
     <!-- article -->
     <article>
@@ -39,5 +34,4 @@
     </article>
     <!-- /article -->
   </div>
-
 <?php endif; ?>

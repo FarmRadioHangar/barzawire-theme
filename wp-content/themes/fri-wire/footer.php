@@ -7,7 +7,6 @@
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
       </a>
 		</footer>
-
     <footer class="wirefm-page-footer page-footer py-4">
       <div class="container-fluid text-center text-md-left">
         <div class="row justify-content-around">
@@ -26,21 +25,18 @@
         </div>
       </div>
 		</footer>
-
     <div class="footer-copyright text-center py-3">
       <div class="row justify-content-around">
         <div class="col-lg-5 px-5 text-lg-left">
           <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("barza-copyright") ); ?>
         </div>
         <div class="col-lg-7 px-5 text-lg-right">
-          &copy; <?php echo date('Y'); ?> Farm Radio International
+          &copy; <?php echo date('Y'); ?> <?php _e( 'Farm Radio International', 'wire' ); ?>
         </div>
       </div>
     </div>
 		<!-- /footer -->
-
 		<?php wp_footer(); ?>
-
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
@@ -50,6 +46,5 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
-
 	</body>
 </html>
