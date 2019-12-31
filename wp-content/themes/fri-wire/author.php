@@ -6,7 +6,7 @@
       <div class="container mb-5 pt-4">
       <?php if (have_posts()): the_post(); ?>
         <h1 class="main"><?php _e( 'Posts by ', 'wire' ); echo get_the_author(); ?></h1>
-        <?php if ( get_the_author_meta('description')) : ?>
+        <?php if (get_the_author_meta('description')): ?>
           <?php echo get_avatar(get_the_author_meta('user_email')); ?>
           <h2><?php _e( 'About ', 'wire' ); echo get_the_author() ; ?></h2>
           <?php echo wpautop( get_the_author_meta('description') ); ?>
