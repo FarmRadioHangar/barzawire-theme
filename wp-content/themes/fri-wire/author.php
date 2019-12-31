@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-	<main role="main">
-		<!-- section -->
-		<section>
+  <main role="main">
+    <!-- section -->
+    <section>
       <!-- container -->
       <div class="container mb-5 pt-4">
       <?php if (have_posts()): the_post(); ?>
@@ -41,7 +41,7 @@
       <hr />
       <?php get_template_part('pagination'); ?>
       </div>
-		</section>
-		<!-- /section -->
+    </section>
+    <!-- /section -->
   </main>
 <?php get_footer(); ?>

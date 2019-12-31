@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main role="main">
-	<!-- section -->
-	<section>
+  <!-- section -->
+  <section>
     <!-- container -->
     <div class="container wirefm-article-list mb-5 pt-4">
       <h1><?php the_title(); ?></h1>
@@ -24,7 +24,7 @@
       <?php endif; ?>
     </div>
     <!-- /container -->
-	</section>
-	<!-- /section -->
+  </section>
+  <!-- /section -->
 </main>
 <?php get_footer(); ?>

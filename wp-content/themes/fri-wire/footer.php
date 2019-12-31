@@ -1,4 +1,4 @@
-		<!-- footer -->
+    <!-- footer -->
     <footer class="wirefm-page-footer page-footer py-4">
       <div class="container text-center text-md-left">
         <div class="row justify-content-between">
@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-		</footer>
+    </footer>
     <div class="footer-copyright text-center py-3">
       <div class="row justify-content-around">
         <div class="col-lg-5 px-5 text-lg-left">
@@ -27,24 +27,24 @@
         </div>
       </div>
     </div>
-		<footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
+    <footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
       <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
       </a>
       <a class="icon" href="https://twitter.com/BarzaFm">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
       </a>
-		</footer>
-		<!-- /footer -->
-		<?php wp_footer(); ?>
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
-	</body>
+    </footer>
+    <!-- /footer -->
+    <?php wp_footer(); ?>
+    <!-- analytics -->
+    <script>
+    (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+    (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+    l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+    ga('send', 'pageview');
+    </script>
+  </body>
 </html>
