@@ -468,3 +468,11 @@ span.page-numbers.current {
 body {
   overflow-x: hidden !important;
 }
+
+/* Plugins */
+
+#cookie-law-info-bar {
+  box-shadow: rgba(0,0,0,.5) 0px 5px 10px; 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
