@@ -46,28 +46,18 @@ class Theme
 
     function rewrites_init()
     {
-        $countries = array(
-            "senegal"      => "Senegal",
-            "nigeria"      => "Nigeria",
-            "tanzania"     => "Tanzania",
-            "kenya"        => "Kenya",
-            "uganda"       => "Uganda",
-            "mozambique"   => "Mozambique",
-            "ghana"        => "Ghana",
-            "niger"        => "Niger",
-            "madagascar"   => "Madagascar",
-            "burkina_faso" => "Burkina Faso",
-            "mali"         => "Mali",
-            "senegal"      => "Senegal",
-            "ethiopia"     => "Ethiopia",
-            "congo"        => "Congo"
+        $terms = get_terms(
+            array(
+                'taxonomy'   => 'country',
+                'hide_empty' => false
+            )
         );
 
-        foreach ($countries as $country => $name) {
+        foreach ($terms as $term) {
             add_rewrite_rule(
-                '^country/' . $country,
-                'index.php?pagename=country&country_name=' . $name,
-                'top' 
+                '^country/' . $term->country,
+                'index.php?pagename=country&country_name=' . $term->name,
+                'top'
             );
         }
     }
