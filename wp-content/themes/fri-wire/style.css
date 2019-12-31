@@ -196,7 +196,7 @@ nav.wirefm-language-nav .nav .nav-item {
 /* Front page */
 
 .wirefm-feature-box {
-  background-color: #4a95b4;
+  background-color: #79a131;
 }
 
 .wirefm-feature-thumbnail {
@@ -204,14 +204,12 @@ nav.wirefm-language-nav .nav .nav-item {
   height: 200px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   background-color: #79a131;
 }
 
 .wirefm-feature-container {
-  border: 3px solid white;
-  padding: 2em 2.5em;
-  margin: 0 0 2em;
+  border-top: 3px solid white;
+  padding-top: 2em;
 }
 
 /* Twitter Feed */
@@ -261,6 +259,10 @@ form.wirefm-search-form {
 
 .wirefm-page-footer h5 {
   font-weight: bold;
+}
+
+.wirefm-page-footer hr {
+  padding-bottom: 0 !important;
 }
 
 /* Color Helpers */
@@ -410,6 +412,7 @@ article h2 {
   color: white;
   padding: 3em 2.8em 2.1em;
   max-width: 600px;
+  margin-left: 5%;
 }
 
 .carousel .overlay .caption {
@@ -422,6 +425,10 @@ article h2 {
   line-height: 1.3em;
   font-family: 'Rokkitt', serif;
   font-weight: 300;
+}
+
+.carousel .read-more {
+  z-index: 20;
 }
 
 @media (max-width: 767px) {

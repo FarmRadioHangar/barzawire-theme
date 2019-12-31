@@ -1,5 +1,7 @@
 <?php if ( $show_thumbnail ): ?>
-  <div class="container mb-3" style="height: <?php echo $image_height; ?>px; background-image: url('<?php echo $thumbnail_url; ?>'); background-position: center; background-size: cover;"></div>
+  <div class="container mb-3" style="position: relative; height: <?php echo $image_height; ?>px; background-image: url('<?php echo $thumbnail_url; ?>'); background-position: center; background-size: cover;">
+    <?php Theme::thumbnail_country( $post_id ); ?>
+  </div>
 <?php endif; ?>
 <?php echo $before_article; ?>
   <h4>

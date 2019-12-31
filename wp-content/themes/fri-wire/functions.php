@@ -8,6 +8,7 @@ class Theme
     function __construct()
     {
         add_action( 'init', array( $this, 'init' ) );
+        add_action( 'init', array( $this, 'rewrites_init' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
         add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
         add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
@@ -43,6 +44,34 @@ class Theme
         add_filter( 'query_vars', array( $this, 'add_query_var' ) );
     }
 
+    function rewrites_init()
+    {
+        $countries = array(
+            "senegal"      => "Senegal",
+            "nigeria"      => "Nigeria",
+            "tanzania"     => "Tanzania",
+            "kenya"        => "Kenya",
+            "uganda"       => "Uganda",
+            "mozambique"   => "Mozambique",
+            "ghana"        => "Ghana",
+            "niger"        => "Niger",
+            "madagascar"   => "Madagascar",
+            "burkina_faso" => "Burkina Faso",
+            "mali"         => "Mali",
+            "senegal"      => "Senegal",
+            "ethiopia"     => "Ethiopia",
+            "congo"        => "Congo"
+        );
+
+        foreach ($countries as $country => $name) {
+            add_rewrite_rule(
+                '^country/' . $country,
+                'index.php?pagename=country&country_name=' . $name,
+                'top' 
+            );
+        }
+    }
+
     function add_query_var( $vars )
     {
         $vars[] = 'country_name';
@@ -58,12 +87,16 @@ class Theme
         }
     }
 
-    function thumbnail_country()
+    function thumbnail_country( $post_id = NULL )
     {
-        $country = get_post_meta( get_the_ID(), 'Country', true );
+        if (NULL === $post_id) {
+            $post_id = get_the_ID();
+        }
 
-        if ( $country ) {
-            echo '<a href="/country?country_name=' . $country . '"><div class="wire-country-tag">' . $country . '</div></a>';
+        $taxonomies = get_the_terms( $post_id, 'country' );
+        if ( $taxonomies ) {
+            $country = $taxonomies[0];
+            echo '<a href="/country/' . $country->slug . '"><div class="wire-country-tag">' . $country->name . '</div></a>';
         }
     }
 
@@ -108,6 +141,7 @@ class Theme
             set_query_var( 'guid', $post->guid );
             set_query_var( 'before_article', $opts['before_article'] );
             set_query_var( 'after_article', $opts['after_article'] );
+            set_query_var( 'post_id', $post->ID );
 
             echo $opts['before'];
             get_template_part( 'front-page-category-story' );
@@ -294,6 +328,8 @@ class Theme
                 'rewrite'           => array( 'slug' => $slug ),
                 'public'            => true,
                 'show_admin_column' => true,
+                'show_in_rest'      => true,
+                'query_var'         => true,
                 'hierarchical'      => false
             )
         );
@@ -358,11 +394,11 @@ class Theme
         $query_args = array(
             'post_type'      => Theme::post_types(),
             'posts_per_page' => -1,
-            'meta_query'     => array(
+            'tax_query'      => array(
                 array(
-                    'value'   => $country,
-                    'compare' => '=',
-                    'key'     => 'Country',
+                    'terms'    => $country,
+                    'field'    => 'slug',
+                    'taxonomy' => 'country',
                 ),
             )
         );
