@@ -1,8 +1,6 @@
-<div class="row">
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <?php get_template_part( 'loop-article' ); ?>
-  <?php endwhile; ?>
-</div>
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php get_template_part( 'loop-article' ); ?>
+<?php endwhile; ?>
 <?php else: ?>
   <div class="col col-12 col-lg-6 pb-5">
     <!-- article -->

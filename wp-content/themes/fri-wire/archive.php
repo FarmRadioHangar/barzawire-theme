@@ -9,7 +9,9 @@
     </div>
     <!-- container -->
     <div id="content" class="container wirefm-article-list mb-5">
-      <?php get_template_part( 'loop' ); ?>
+      <div id="content-row" class="row">
+        <?php get_template_part( 'loop' ); ?>
+      </div>
     </div>
   </section>
   <!-- /section -->

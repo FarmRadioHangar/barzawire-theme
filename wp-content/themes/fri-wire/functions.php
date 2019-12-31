@@ -35,8 +35,9 @@ class Theme
         $this->register_widget_areas();
 
         add_theme_support( 'infinite-scroll', array(
-            'container' => 'content',
+            'container' => 'content-row',
             'render'    => array( $this, 'infinite_scroll_render' ),
+            'wrapper'   => false,
             'footer'    => 'page'
         ) );
 
