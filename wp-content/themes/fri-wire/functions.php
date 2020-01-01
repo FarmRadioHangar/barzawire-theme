@@ -13,6 +13,7 @@ class Theme
         add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
         add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
         add_action( 'pre_get_posts', array( $this, 'custom_post_types_archive' ) );
+        add_action( 'pre_get_posts', array( $this, 'exclude_pages_from_search' ) );
     }
 
     /**
@@ -227,6 +228,13 @@ class Theme
     {
         if ( ( $query->is_tag() || $query->is_author() ) && $query->is_main_query() ) {
             $query->set( 'post_type', array_merge( array( 'post', 'object' ), Theme::post_types() ) );
+        }
+    }
+
+    function exclude_pages_from_search( $query )
+    {
+        if ( $query->is_main_query() && $query->is_search() ) {
+            $query->set( 'post__not_in', get_all_page_ids() );
         }
     }
 
