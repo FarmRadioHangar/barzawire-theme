@@ -17,6 +17,14 @@
         </div>
       </div>
     </footer>
+    <footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
+      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
+      </a>
+      <a class="icon" href="https://twitter.com/BarzaFm">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
+      </a>
+    </footer>
     <div class="footer-copyright text-center py-3">
       <div class="row justify-content-around">
         <div class="col-lg-5 px-5 text-lg-left">
@@ -27,14 +35,6 @@
         </div>
       </div>
     </div>
-    <footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
-      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
-      </a>
-      <a class="icon" href="https://twitter.com/BarzaFm">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
-      </a>
-    </footer>
     <!-- /footer -->
     <?php wp_footer(); ?>
     <!-- analytics -->
