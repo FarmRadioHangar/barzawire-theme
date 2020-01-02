@@ -8,7 +8,6 @@ class Theme
     function __construct()
     {
         add_action( 'init', array( $this, 'init' ) );
-        add_action( 'init', array( $this, 'rewrites_init' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
         add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
         add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
@@ -43,31 +42,6 @@ class Theme
         ) );
 
         add_filter( 'infinite_scroll_credit', array( $this, 'infinite_scroll_credit' ) );
-        add_filter( 'query_vars', array( $this, 'add_query_var' ) );
-    }
-
-    function rewrites_init()
-    {
-        $terms = get_terms(
-            array(
-                'taxonomy'   => 'countries',
-                'hide_empty' => false
-            )
-        );
-
-        foreach ($terms as $term) {
-            add_rewrite_rule(
-                '^country/' . $term->country,
-                'index.php?pagename=country&country_name=' . $term->name,
-                'top'
-            );
-        }
-    }
-
-    function add_query_var( $vars )
-    {
-        $vars[] = 'country_name';
-        return $vars;
     }
 
     function thumbnail_url()
@@ -81,17 +55,16 @@ class Theme
 
     function thumbnail_country( $post_id = NULL )
     {
-        if (NULL === $post_id) {
+        if ( NULL === $post_id ) {
             $post_id = get_the_ID();
         }
 
         $taxonomies = get_the_terms( $post_id, 'countries' );
         if ( !$taxonomies->errors && $taxonomies[0] ) {
             $country = $taxonomies[0];
-            echo '<a href="/country/' . $country->slug . '"><div class="wire-country-tag">' . $country->name . '</div></a>';
+            echo '<a href="/?countries=' . $country->slug . '"><div class="wire-country-tag">' . $country->name . '</div></a>';
         }
     }
-
 
     function frontpage_category_posts( $options = array() )
     {
@@ -339,26 +312,28 @@ class Theme
      */
     function language_nav()
     {
-        wp_nav_menu(
-            array(
-              'theme_location'  => 'extra-menu',
-              'menu'            => '',
-              'container'       => 'div',
-              'container_class' => 'menu-{menu slug}-container',
-              'container_id'    => '',
-              'menu_class'      => 'menu',
-              'menu_id'         => '',
-              'echo'            => true,
-              'fallback_cb'     => 'wp_page_menu',
-              'before'          => '',
-              'after'           => '',
-              'link_before'     => '',
-              'link_after'      => '',
-              'items_wrap'      => '<ul class="nav ml-auto">%3$s</ul>',
-              'depth'           => 0,
-              'walker'          => new Walker_Language_Menu()
-            )
-        );
+        if ( function_exists( 'pll_current_language' ) ) {
+            wp_nav_menu(
+                array(
+                  'theme_location'  => 'extra-menu',
+                  'menu'            => '',
+                  'container'       => 'div',
+                  'container_class' => 'menu-{menu slug}-container',
+                  'container_id'    => '',
+                  'menu_class'      => 'menu',
+                  'menu_id'         => '',
+                  'echo'            => true,
+                  'fallback_cb'     => 'wp_page_menu',
+                  'before'          => '',
+                  'after'           => '',
+                  'link_before'     => '',
+                  'link_after'      => '',
+                  'items_wrap'      => '<ul class="nav ml-auto">%3$s</ul>',
+                  'depth'           => 0,
+                  'walker'          => new Walker_Language_Menu()
+                )
+            );
+        }
     }
 
     /**
@@ -386,23 +361,6 @@ class Theme
                 'walker'          => new Walker_Main_Menu()
             )
         );
-    }
-
-    function country_posts( $country )
-    {
-        $query_args = array(
-            'post_type'      => Theme::post_types(),
-            'posts_per_page' => -1,
-            'tax_query'      => array(
-                array(
-                    'terms'    => $country,
-                    'field'    => 'slug',
-                    'taxonomy' => 'countries',
-                ),
-            )
-        );
-
-        return new WP_Query($query_args);
     }
 
     /**
