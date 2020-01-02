@@ -31,7 +31,7 @@ class Theme
         $this->add_post_type( 'yenkasa', 'YenKasa' );
 
         $this->add_taxonomy ( 'issues', 'Issue', 'issue' );
-        $this->add_taxonomy ( 'country', 'Country', 'country' );
+        $this->add_taxonomy ( 'countries', 'Country', 'country' );
 
         $this->register_widget_areas();
 
@@ -50,7 +50,7 @@ class Theme
     {
         $terms = get_terms(
             array(
-                'taxonomy'   => 'country',
+                'taxonomy'   => 'countries',
                 'hide_empty' => false
             )
         );
@@ -85,8 +85,8 @@ class Theme
             $post_id = get_the_ID();
         }
 
-        $taxonomies = get_the_terms( $post_id, 'country' );
-        if ( $taxonomies ) {
+        $taxonomies = get_the_terms( $post_id, 'countries' );
+        if ( !$taxonomies->errors && $taxonomies[0] ) {
             $country = $taxonomies[0];
             echo '<a href="/country/' . $country->slug . '"><div class="wire-country-tag">' . $country->name . '</div></a>';
         }
@@ -329,7 +329,7 @@ class Theme
                 'show_admin_column' => true,
                 'show_in_rest'      => true,
                 'query_var'         => true,
-                'hierarchical'      => false
+                'hierarchical'      => true
             )
         );
     }
@@ -397,7 +397,7 @@ class Theme
                 array(
                     'terms'    => $country,
                     'field'    => 'slug',
-                    'taxonomy' => 'country',
+                    'taxonomy' => 'countries',
                 ),
             )
         );
