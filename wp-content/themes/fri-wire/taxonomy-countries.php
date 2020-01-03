@@ -16,4 +16,4 @@
   </section>
   <!-- /section -->
 </main>
-<?php get_footer(); ?>asdasdf
+<?php get_footer(); ?>
