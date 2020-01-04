@@ -10,6 +10,7 @@ class Theme
         add_action( 'init', array( $this, 'init' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
         add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
+        add_action( 'after_setup_theme', array( $this, 'remove_parent_actions' ) );
         add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
         add_action( 'pre_get_posts', array( $this, 'custom_post_types_archive' ) );
         add_action( 'pre_get_posts', array( $this, 'exclude_pages_from_search' ) );
@@ -382,6 +383,11 @@ class Theme
         if ( class_exists( 'Jetpack_Likes' ) ) {
             remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
         }
+    }
+
+    function remove_parent_actions()
+    {
+        remove_action( 'init', 'create_post_type_html5' );
     }
 
     function remove_parent_filters()
