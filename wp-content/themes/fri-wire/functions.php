@@ -11,6 +11,7 @@ class Theme
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_theme_styles' ), PHP_INT_MAX );
         add_action( 'after_setup_theme', array( $this, 'remove_parent_filters' ) );
         add_action( 'after_setup_theme', array( $this, 'remove_parent_actions' ) );
+        add_action( 'after_setup_theme', array( $this, 'child_theme_slug_setup' ) );
         add_action( 'loop_start', array( $this, 'jetpack_remove_share' ) );
         add_action( 'pre_get_posts', array( $this, 'custom_post_types_archive' ) );
         add_action( 'pre_get_posts', array( $this, 'exclude_pages_from_search' ) );
@@ -383,6 +384,12 @@ class Theme
         if ( class_exists( 'Jetpack_Likes' ) ) {
             remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
         }
+    }
+
+    function child_theme_slug_setup()
+    {
+        load_child_theme_textdomain( 'html5blank', get_stylesheet_directory() . '/languages' );
+        load_theme_textdomain( 'wire', get_stylesheet_directory() . '/languages' );
     }
 
     function remove_parent_actions()

@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Barza Wire\n"
+"POT-Creation-Date: 2020-01-07 12:58+0100\n"
+"PO-Revision-Date: 2020-01-07 12:59+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Last-Translator: \n"
+"Language: sw\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:9
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:13
+msgid "Return home"
+msgstr ""
+
+#: author.php:8
+msgid "Posts by "
+msgstr ""
+
+#: author.php:11
+msgid "About "
+msgstr ""
+
+#: author.php:37 loop.php:8 page.php:21 searchloop.php:33 single.php:73
+msgid "Sorry, nothing to display."
+msgstr ""
+
+#: carousel-item.php:9
+msgid "Read this story"
+msgstr ""
+
+#: footer.php:34
+msgid "Farm Radio International"
+msgstr ""
+
+#: front-page-category-story.php:15
+msgid "View story »"
+msgstr ""
+
+#: front-page-template.php:20
+msgid "Previous"
+msgstr ""
+
+#: front-page-template.php:24
+msgid "Next"
+msgstr ""
+
+#: front-page-template.php:35
+msgid "Featured Farmer Stories"
+msgstr ""
+
+#: front-page-template.php:60
+msgid "Resources"
+msgstr ""
+
+#: front-page-template.php:66
+msgid "Opportunities"
+msgstr ""
+
+#: front-page-template.php:72
+msgid "Spotlights"
+msgstr ""
+
+#: functions.php:199
+msgid "A service of Farm Radio International"
+msgstr ""
+
+#: functions.php:225
+msgid "Barza Contact Info"
+msgstr ""
+
+#: functions.php:233
+msgid "Barza Site Info"
+msgstr ""
+
+#: functions.php:241
+msgid "Barza Copyright"
+msgstr ""
+
+#: functions.php:249
+msgid "Barza Front Sidebar"
+msgstr ""
+
+#: index.php:7
+msgid "Latest Posts"
+msgstr ""
+
+#: search.php:6
+#, php-format
+msgid "%s Search Results for "
+msgstr ""
+
+#: searchform.php:4
+msgid "To search, type and hit enter."
+msgstr ""
+
+#: tag.php:7
+msgid "Stories tagged: "
+msgstr ""
