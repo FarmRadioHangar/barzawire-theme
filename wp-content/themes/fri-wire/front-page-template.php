@@ -56,22 +56,22 @@
       <hr />
       <div class="row">
         <div class="col-md-6 col-lg-4 pb-4">
-          <h3 class="wirefm-section-header">
+          <h3 class="wirefm-section-header section-resources">
             <?php _e( 'Resources', 'wire' ); ?>
           </h3>
           <?php Theme::frontpage_category_posts( array( 'before_article' => '<div class="wirefm-bleft">', 'image_height' => 200, 'post_type' => 'resources' ) ); ?>
         </div>
         <div class="col-md-6 col-lg-4 pb-4">
-          <h3 class="wirefm-section-header">
+          <h3 class="wirefm-section-header section-opportunities">
             <?php _e( 'Opportunities', 'wire' ); ?>
           </h3>
           <?php Theme::frontpage_category_posts( array( 'before_article' => '<div class="wirefm-bleft">', 'image_height' => 200, 'post_type' => 'opportunities' ) ); ?>
         </div>
         <div class="col-md-12 col-lg-4 pb-4">
-          <h3 class="wirefm-section-header yenkasa">
-            <?php _e( 'YenKasa', 'wire' ); ?>
+          <h3 class="wirefm-section-header section-spotlights">
+            <?php _e( 'Spotlights', 'wire' ); ?>
           </h3>
-          <?php Theme::frontpage_category_posts( array( 'before_article' => '<div class="wirefm-bleft">', 'image_height' => 200, 'post_type' => 'yenkasa' ) ); ?>
+          <?php Theme::frontpage_category_posts( array( 'before_article' => '<div class="wirefm-bleft">', 'image_height' => 200, 'post_type' => 'spotlights' ) ); ?>
         </div>
       </div>
     </div>

@@ -48,7 +48,7 @@ h4 {
 }
 
 h4 a, h2 a {
-  color: #4a4a4a;
+  color: #3a3a3a;
 }
 
 .solid-box h4, .solid-box h4 a {
@@ -68,8 +68,12 @@ h4 a, h2 a {
   padding: 0.6em 0;
 }
 
-.wirefm-section-header.yenkasa {
+.wirefm-section-header.section-spotlights {
   color: #d87900;
+}
+
+.wirefm-section-header.section-opportunities {
+  color: #4a95b4;
 }
 
 .wirefm-bleft {
