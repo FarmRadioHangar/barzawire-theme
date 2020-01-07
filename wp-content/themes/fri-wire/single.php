@@ -44,13 +44,20 @@
           <!-- /tags -->
         </div>
         <div class="col-12 mr-auto mb-5">
-          <?php if ( has_excerpt() ): ?>
-          <div class="wirefm-meta wirefm-blue">
-            <?php the_excerpt(); ?>
-          </div>
-          <?php endif; ?>
           <?php if ( function_exists( 'sharing_display' )): ?>
             <?php sharing_display( '', true ); ?>
+          <?php endif; ?>
+            <?php if ( function_exists('wp_print' ) ):  ?>
+              <p style="float: right; margin-top: -3em;">
+                <?php print_link(); ?>
+              </p>
+            <?php endif; ?>
+          <?php if ( has_excerpt() ): ?>
+          <div class="wirefm-excerpt">
+            <p>
+              <?php the_excerpt(); ?>
+            </p>
+          </div>
           <?php endif; ?>
           <?php the_content(); ?>
         </div>
