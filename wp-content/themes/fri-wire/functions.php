@@ -162,9 +162,8 @@ class Theme
     function carousel()
     {
         $posts = get_posts( array(
-            'post_type'   => 'farmer-stories',
             'numberposts' => 3,
-            'post_type'   => Theme::post_types()
+            'post_type'   => 'farmer-stories'
         ));
 
         $i = 0;
