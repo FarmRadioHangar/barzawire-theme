@@ -35,7 +35,7 @@
       <div class="col-12 col-lg-9">
         <nav class="nav navbar navbar-expand-lg navbar-light bg-white py-0" role="navigation">
           <div class="container-fluid">
-            <a class="navbar-brand" href="/">/Barza Wire</a>
+            <a class="navbar-brand" href="/">Barza Wire</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#wirefm_mainNavbarToggler" aria-controls="wirefm_mainNavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
