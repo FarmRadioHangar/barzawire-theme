@@ -40,10 +40,8 @@ a.read-more {
 }
 
 h4 {
-  font-family: 'Rokkitt', serif;
-  font-weight: 200;
-  font-size: 1.75em;
-  line-height: 1.1em;
+  font-weight: 600;
+  line-height: 1.3em;
   margin-bottom: 0.5em;
 }
 
@@ -294,7 +292,7 @@ form.wirefm-search-form {
 }
 
 .wirefm-article-list article {
-  margin-top: 2em;
+  margin-top: 5em;
 }
 
 .wire-country-tag {
@@ -381,11 +379,10 @@ article .wirefm-post-title h1 a {
 }
 
 article h2 {
-  font-family: 'Rokkitt', serif;
-  font-size: 2em;
-  font-weight: 200;
+  font-size: 1.5em;
+  line-height: 1.3;
+  font-weight: 600;
   margin: 0.4em 0 0.5em;
-  line-height: 1;
   color: #789900;
 }
 
