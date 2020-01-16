@@ -391,8 +391,16 @@ article h2 {
   color: #789900;
 }
 
-.wirefm-excerpt {
-  font-weight: bold;
+.wirefm-news-brief {
+  border: 1px solid #ddd;
+  border-left: 4px solid #789900;
+  padding: 1em 1.4em;
+  margin: 2em 2em 2em 0;
+}
+
+.wirefm-news-brief > .wirefm-section-header {
+  padding: 0;
+  text-align: left;
 }
 
 /* Carousel */
@@ -486,7 +494,7 @@ body {
 /* Plugins */
 
 #cookie-law-info-bar {
-  box-shadow: rgba(0,0,0,.5) 0px 5px 10px; 
+  box-shadow: rgba(0,0,0,.5) 0px 5px 10px;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }

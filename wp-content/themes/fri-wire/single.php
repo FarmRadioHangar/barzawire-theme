@@ -52,10 +52,11 @@
                 <?php print_link(); ?>
               </p>
             <?php endif; ?>
-          <?php if ( has_excerpt() ): ?>
-          <div class="wirefm-excerpt">
+          <?php if ( metadata_exists( 'post', get_the_ID(), 'News Brief' ) ): ?>
+          <div class="wirefm-news-brief">
+            <h2 class="wirefm-section-header"><?php _e( 'News Brief' ); ?></h2>
             <p>
-              <?php the_excerpt(); ?>
+              <?php echo get_post_meta( get_the_ID(), 'News Brief', true ); ?>
             </p>
           </div>
           <?php endif; ?>
