@@ -79,13 +79,6 @@ h4 a, h2 a {
   padding-left: 1.3em;
 }
 
-/* Home */
-
-.home h4 {
-  font-size: 1.3em !important;
-  line-height: 1.35 !important;
-}
-
 /* Tags */
 
 .badge.wirefm-badge {
@@ -207,6 +200,11 @@ nav.wirefm-language-nav .nav .nav-item {
 }
 
 /* Front page */
+
+.home h4 {
+  font-size: 1.3em !important;
+  line-height: 1.35 !important;
+}
 
 .wirefm-feature-box {
   background-color: #79a131;
