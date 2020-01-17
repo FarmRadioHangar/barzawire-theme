@@ -46,6 +46,29 @@ class Theme
         add_filter( 'infinite_scroll_credit', array( $this, 'infinite_scroll_credit' ) );
     }
 
+    function translations() {
+        if ( function_exists( 'pll_current_language' ) ) {
+            $languages = pll_the_languages( array( 'raw' => 1 ) );
+            $out = '';
+            foreach($languages as $language) {
+                if (!($language['current_lang'] || $language['no_translation'])) {
+                    $out .= '<li>';
+                    $out .= '<a href="' . $language['url'] . '">';
+                    $out .= $language['name'];
+                    $out .= '</a>';
+                    $out .= '</li>';
+                }
+            }
+            if ('' !== $out) {
+                echo '<div class="wirefm-story-lang"><span><b>';
+                echo __( 'This story is also available in: ' );
+                echo '</b></span><ul>';
+                echo $out;
+                echo '</ul></div>';
+            }
+        }
+    }
+
     function thumbnail_url()
     {
         if ( has_post_thumbnail() ) {

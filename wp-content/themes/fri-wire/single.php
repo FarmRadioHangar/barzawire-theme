@@ -5,7 +5,9 @@
     <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="wirefm-post-image" style="background-image: url('<?php echo Theme::thumbnail_url(); ?>');"></div>
+    <div class="wirefm-post-image" style="background-image: url('<?php echo Theme::thumbnail_url(); ?>');">
+      <?php Theme::translations(); ?>
+    </div>
     <!-- container -->
     <div class="container">
       <div class="wirefm-post-title">

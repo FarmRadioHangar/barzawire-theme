@@ -344,6 +344,7 @@ p.meta {
   min-height: 300px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .wirefm-post-title {
@@ -351,6 +352,7 @@ p.meta {
   padding-top: 150px;
   padding-bottom: 3em;
   min-height: 330px;
+  position: relative;
 }
 
 article .post-box {
@@ -401,6 +403,36 @@ article h2 {
 .wirefm-news-brief > .wirefm-section-header {
   padding: 0;
   text-align: left;
+}
+
+.wirefm-story-lang {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  padding: 0.4em 1em 0.5em;
+  font-size: 0.85em;
+  float: right;
+  margin: 1em;
+}
+
+.wirefm-story-lang a {
+  color: white !important;
+}
+
+.wirefm-story-lang ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.wirefm-story-lang ul li {
+  margin: 0 0 0 0.6em;
+  padding: 0;
 }
 
 /* Carousel */

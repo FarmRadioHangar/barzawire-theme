@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-9">
           <div class="row featured-top">
-            <?php Theme::frontpage_category_posts( array( 'post_type' => 'farmer-stories', 'show_excerpt' => false, 'limit' => 2, 'before' => '<div class="col-lg-6 pb-4">', 'after' => '</div>' ) ); ?>
+            <?php Theme::frontpage_category_posts( array( 'before_article' => '<div class="wirefm-bleft">', 'post_type' => 'farmer-stories', 'show_excerpt' => false, 'limit' => 2, 'before' => '<div class="col-lg-6 pb-4">', 'after' => '</div>' ) ); ?>
           </div>
           <div class="row">
             <div class="col-12 mb-5">
