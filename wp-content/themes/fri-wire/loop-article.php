@@ -17,7 +17,7 @@
       <!-- post meta -->
       <div class="smaller">
         <p class="meta">
-          <b><?php the_author_posts_link(); ?></b> | <span class="date"><?php the_time( 'F j, Y' ); ?></span>
+          <b><?php the_author_posts_link(); ?></b> | <span class="date"><?php echo get_the_date(); ?></span>
         </p>
       </div>
       <!-- /post meta -->

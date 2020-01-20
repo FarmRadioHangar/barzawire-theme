@@ -16,14 +16,14 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <!-- post title -->
           <h2>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a>
           </h2>
           <!-- /post title -->
           <?php Theme::excerpt(); ?>
           <!-- post meta -->
           <div class="smaller">
             <p class="meta">
-              <b><?php the_author_posts_link(); ?></b> | <span class="date"><?php the_time( 'F j, Y' ); ?></span>
+              <b><?php the_author_posts_link(); ?></b> | <span class="date"><?php echo get_the_date(); ?></span>
             </p>
           </div>
           <!-- /post meta -->

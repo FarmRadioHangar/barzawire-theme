@@ -28,7 +28,7 @@
               <?php the_author_posts_link(); ?>
             </b> | 
             <span class="date">
-              <?php the_time( 'F j, Y' ); ?>
+              <?php echo get_the_date(); ?>
             </span>
           </p>
         </div>

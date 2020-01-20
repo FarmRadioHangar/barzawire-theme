@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+<!--
     <link href="//fonts.googleapis.com/css?family=Rokkitt:100,200,300,400,700&display=swap" rel="stylesheet">
+-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/icons/cropped-Favicon-512x512_FRI-32x32.png" />
     <?php wp_head(); ?>
