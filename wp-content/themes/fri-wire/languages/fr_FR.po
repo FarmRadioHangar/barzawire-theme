@@ -15,29 +15,29 @@ msgstr ""
 "Language: fr_FR\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:9
+%s #: 404.php:9
 msgid "Page not found"
-msgstr ""
+msgstr "Page non trouvée"
 
 #: 404.php:13
 msgid "Return home"
-msgstr ""
+msgstr "Retournez à la page d’accueil"
 
 #: author.php:8
 msgid "Posts by "
-msgstr ""
+msgstr "Publié par "
 
 #: author.php:11
 msgid "About "
-msgstr ""
+msgstr "À propos "
 
 #: author.php:37 loop.php:8 page.php:21 searchloop.php:33 single.php:73
 msgid "Sorry, nothing to display."
-msgstr ""
+msgstr "Désolé, aucun résultat."
 
 #: carousel-item.php:9
 msgid "Read this story"
-msgstr ""
+msgstr "Lisez cette nouvelle"
 
 #: footer.php:34
 msgid "Farm Radio International"
@@ -45,15 +45,15 @@ msgstr "Radios Rurales Internationales"
 
 #: front-page-category-story.php:15
 msgid "View story »"
-msgstr ""
+msgstr "Consultez la nouvelle »"
 
 #: front-page-template.php:20
 msgid "Previous"
-msgstr ""
+msgstr "Précédent"
 
 #: front-page-template.php:24
 msgid "Next"
-msgstr ""
+msgstr "Suivant"
 
 #: front-page-template.php:35
 msgid "Featured Farmer Stories"
@@ -73,7 +73,7 @@ msgstr "En lumière"
 
 #: functions.php:199
 msgid "A service of Farm Radio International"
-msgstr ""
+msgstr "Un service de Radios Rurales Internationales"
 
 #: functions.php:225
 msgid "Barza Contact Info"
@@ -93,17 +93,17 @@ msgstr ""
 
 #: index.php:7
 msgid "Latest Posts"
-msgstr ""
+msgstr "Dernières publications"
 
 #: search.php:6
 #, php-format
 msgid "%s Search Results for "
-msgstr ""
+msgstr "%s résultats pour "
 
 #: searchform.php:4
 msgid "To search, type and hit enter."
-msgstr ""
+msgstr "Pour rechercher, saisissez et appuyez sur Entrer."
 
 #: tag.php:7
 msgid "Stories tagged: "
-msgstr ""
+msgstr "Nouvelles marquées : "
