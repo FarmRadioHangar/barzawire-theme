@@ -31,7 +31,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 pt-4">
-          <h1 class="main pb-1 wirefm-green">
+          <h1 class="main pb-1 wirefm-blue">
             <?php _e( 'Featured Farmer Stories', 'wire' ); ?>
           </h1>
         </div>
