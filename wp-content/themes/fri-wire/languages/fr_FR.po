@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Barza Wire\n"
-"POT-Creation-Date: 2020-01-27 17:52+0300\n"
-"PO-Revision-Date: 2020-01-27 17:59+0300\n"
+"POT-Creation-Date: 2020-02-07 15:18+0300\n"
+"PO-Revision-Date: 2020-02-07 15:25+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -25,15 +25,15 @@ msgstr "Retournez à la page d’accueil"
 
 #: author.php:8
 msgid "Posts by "
-msgstr "Publié par"
+msgstr "Publié par "
 
 #: author.php:11
 msgid "About "
-msgstr "À propos"
+msgstr "À propos "
 
 #: author.php:37 loop.php:8 page.php:21 searchloop.php:33 single.php:76
 msgid "Sorry, nothing to display."
-msgstr "Désolé, aucun résultat"
+msgstr "Désolé, aucun résultat."
 
 #: carousel-item.php:9
 msgid "Read this story"
@@ -102,7 +102,7 @@ msgstr "Dernières publications"
 #: search.php:6
 #, php-format
 msgid "%s Search Results for "
-msgstr "%s résultats pour"
+msgstr "%s résultats pour "
 
 #: searchform.php:4
 msgid "To search, type and hit enter."

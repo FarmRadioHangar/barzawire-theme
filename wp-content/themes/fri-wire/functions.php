@@ -22,14 +22,14 @@ class Theme
      */
     function init()
     {
-        $this->add_post_type( 'farmer-stories', 'Farmer stories', 'Farmer story' );
-        $this->add_post_type( 'news', 'News in brief' );
-        $this->add_post_type( 'resources', 'Resources', 'Resource' );
-        $this->add_post_type( 'spotlights', 'Spotlights', 'Spotlight' );
-        $this->add_post_type( 'weeks-script', 'Script of the week' );
-        $this->add_post_type( 'opportunities', 'Opportunities', 'Opportunity' );
-        $this->add_post_type( 'archives', 'Archives', 'Archive' );
-        $this->add_post_type( 'yenkasa', 'YenKasa' );
+        $this->add_post_type( 'farmer-stories', 'Farmer stories', 'Farmer story', 1 );
+        $this->add_post_type( 'news', 'News in brief', 1 );
+        $this->add_post_type( 'resources', 'Resources', 'Resource', 1 );
+        $this->add_post_type( 'spotlights', 'Spotlights', 'Spotlight', 1 );
+        $this->add_post_type( 'weeks-script', 'Script of the week', 1 );
+        $this->add_post_type( 'opportunities', 'Opportunities', 'Opportunity', 1 );
+        $this->add_post_type( 'archives', 'Archives', 'Archive', 1 );
+        $this->add_post_type( 'yenkasa', 'YenKasa', 1 );
 
         $this->add_taxonomy ( 'issues', 'Issue', 'issue' );
         $this->add_taxonomy ( 'countries', 'Country', 'country' );
@@ -44,6 +44,11 @@ class Theme
         ) );
 
         add_filter( 'infinite_scroll_credit', array( $this, 'infinite_scroll_credit' ) );
+
+        if ( function_exists( 'pll_register_string' ) ) {
+          pll_register_string( 'wire', 'Farmer stories' );
+          pll_register_string( 'wire', 'Script of the week' );
+        }
     }
 
     function translations() {
@@ -295,8 +300,8 @@ class Theme
         register_post_type( $post_type,
             array(
                 'labels' => array(
-                    'name'          => __( $name ),
-                    'singular_name' => __( $singular_name )
+                    'name'          => __( $name, 'wire' ),
+                    'singular_name' => __( $singular_name, 'wire' )
                 ),
                 'public'            => true,
                 'show_ui'           => true,
