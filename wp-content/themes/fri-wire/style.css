@@ -147,11 +147,13 @@ nav.wirefm-language-nav .nav .nav-item {
 }
 
 .wirefm-main-nav .navbar-brand {
-  font-family: 'Courier New', Courier, monospace;
-  color: rgb(120, 153, 0);
-  font-weight: 100;
   font-size: 1.5em;
   line-height: 1.8;
+}
+
+.wirefm-main-nav .navbar-brand img {
+  height: 34px;
+  padding-bottom: 6px;
 }
 
 .wirefm-main-nav .navbar-brand:hover {
@@ -200,6 +202,14 @@ nav.wirefm-language-nav .nav .nav-item {
   .wirefm-main-nav nav.navbar .container-fluid .navbar-collapse ul {
     padding-top: 15px;
   }
+}
+
+.wirefm-main-nav .container-fluid,
+.wirefm-language-nav .container-fluid {
+  padding-left: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 
 /* Front page */

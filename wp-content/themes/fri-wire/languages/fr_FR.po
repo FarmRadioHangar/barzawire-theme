@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Barza Wire\n"
 "POT-Creation-Date: 2020-02-07 15:18+0300\n"
-"PO-Revision-Date: 2020-02-07 15:25+0300\n"
+"PO-Revision-Date: 2020-02-07 15:51+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -110,7 +110,7 @@ msgstr "Pour rechercher, saisissez et appuyez sur Entrer."
 
 #: single.php:59
 msgid "News Brief"
-msgstr ""
+msgstr "Dépêche"
 
 #: tag.php:7
 msgid "Stories tagged: "

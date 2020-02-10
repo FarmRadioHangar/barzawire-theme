@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet" crossorigin="anonymous">
-<!--
-    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
--->
     <link href="//fonts.googleapis.com/css?family=Rokkitt:100,200,300,400,700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/icons/cropped-Favicon-512x512_FRI-32x32.png" />
@@ -27,10 +24,12 @@
   <body <?php body_class(); ?>>
     <!-- language nav -->
     <nav class="wirefm-language-nav nav navbar text-white" role="navigation">
-      <a href="https://farmradio.fm">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" height="32" />
-      </a>
-      <?php Theme::language_nav(); ?>
+      <div class="container-fluid">
+        <a href="https://farmradio.fm">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" height="32" />
+        </a>
+        <?php Theme::language_nav(); ?>
+      </div>
     </nav>
     <!-- /language nav -->
     <!-- main nav -->
@@ -38,7 +37,7 @@
       <div class="col-12 col-lg-9">
         <nav class="nav navbar navbar-expand-lg navbar-light bg-white py-0" role="navigation">
           <div class="container-fluid">
-            <a class="navbar-brand" href="/">Barza Wire</a>
+            <a class="navbar-brand" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bw_logo.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#wirefm_mainNavbarToggler" aria-controls="wirefm_mainNavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
