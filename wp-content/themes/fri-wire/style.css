@@ -424,13 +424,13 @@ article h2 {
   position: absolute;
   right: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
   padding: 0.4em 1em 0.5em;
   font-size: 0.85em;
   float: right;
-  margin: 1em;
+  margin: 0.5em;
+  z-index: 20;
 }
 
 .wirefm-story-lang a {
@@ -440,14 +440,15 @@ article h2 {
 .wirefm-story-lang ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
 .wirefm-story-lang ul li {
-  margin: 0 0 0 0.6em;
-  padding: 0;
+  padding: 0.6em 0.2em 0.6em 1em;
+  margin: 0.2em;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Carousel */

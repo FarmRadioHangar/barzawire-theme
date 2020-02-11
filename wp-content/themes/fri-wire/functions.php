@@ -48,6 +48,12 @@ class Theme
         if ( function_exists( 'pll_register_string' ) ) {
           pll_register_string( 'wire', 'Farmer stories' );
           pll_register_string( 'wire', 'Script of the week' );
+          pll_register_string( 'wire', 'Download this story' );
+
+          pll_register_string( 'wire', 'This story is also available in Français' );
+          pll_register_string( 'wire', 'This story is also available in Kiswahili' );
+          pll_register_string( 'wire', 'This story is also available in Amharic' );
+          pll_register_string( 'wire', 'This story is also available in Hausa' );
         }
     }
 
@@ -57,20 +63,17 @@ class Theme
             $out = '';
             foreach($languages as $language) {
                 if (!($language['current_lang'] || $language['no_translation'])) {
+                    $str = 'This story is also available in ' . $language['name'];
                     $out .= '<li>';
-                    $out .= '<a href="' . $language['url'] . '">';
-                    $out .= $language['name'];
-                    $out .= '</a>';
+                    $out .= '<b><a href="' . $language['url'] . '">';
+                    $out .= __( $str );
+                    $out .= '</b></a>';
                     $out .= '</li>';
                 }
             }
-            if ('' !== $out) {
-                echo '<div class="wirefm-story-lang"><span><b>';
-                echo __( 'This story is also available in: ' );
-                echo '</b></span><ul>';
-                echo $out;
-                echo '</ul></div>';
-            }
+            echo '<div class="wirefm-story-lang"><ul>';
+            echo $out;
+            echo '</ul></div>';
         }
     }
 

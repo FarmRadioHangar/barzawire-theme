@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Barza Wire\n"
-"POT-Creation-Date: 2020-02-11 12:31+0300\n"
+"POT-Creation-Date: 2020-02-11 14:23+0300\n"
 "PO-Revision-Date: 2020-01-06 18:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -72,27 +72,23 @@ msgstr ""
 msgid "Spotlights"
 msgstr ""
 
-#: functions.php:69
-msgid "This story is also available in: "
-msgstr ""
-
-#: functions.php:227
+#: functions.php:229
 msgid "A service of Farm Radio International"
 msgstr ""
 
-#: functions.php:253
+#: functions.php:255
 msgid "Barza Contact Info"
 msgstr ""
 
-#: functions.php:261
+#: functions.php:263
 msgid "Barza Site Info"
 msgstr ""
 
-#: functions.php:269
+#: functions.php:271
 msgid "Barza Copyright"
 msgstr ""
 
-#: functions.php:277
+#: functions.php:279
 msgid "Barza Front Sidebar"
 msgstr ""
 
