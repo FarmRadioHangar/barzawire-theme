@@ -1,4 +1,4 @@
-<div class="carousel-item <?php echo $active_class ?>" style="background-image: url('<?php echo $thumbnail_url ?>');">
+<div onclick="location.href='<?php echo $guid ?>';" class="carousel-item <?php echo $active_class ?>" style="cursor: pointer; background-image: url('<?php echo $thumbnail_url ?>');">
   <div class="overlay">
     <div class="caption">
       <div class="box">

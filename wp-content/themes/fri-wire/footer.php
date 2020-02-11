@@ -1,4 +1,12 @@
     <!-- footer -->
+    <footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
+      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
+      </a>
+      <a class="icon" href="https://twitter.com/BarzaFm">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
+      </a>
+    </footer>
     <footer class="wirefm-page-footer page-footer py-4">
       <div class="container text-center text-md-left">
         <div class="row justify-content-between">
@@ -16,14 +24,6 @@
           </div>
         </div>
       </div>
-    </footer>
-    <footer class="wirefm-social-footer row justify-content-center text-white" role="contentinfo">
-      <a class="icon" href="https://www.facebook.com/barzaradio?ref=hl">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/fb.png">
-      </a>
-      <a class="icon" href="https://twitter.com/BarzaFm">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/social-media/twitter.png">
-      </a>
     </footer>
     <div class="footer-copyright text-center py-3">
       <div class="row justify-content-around">

@@ -2,11 +2,11 @@
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <!-- post thumbnail -->
-    <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-      <div class="wire-loop-thumbnail-container container mb-3" style="background-image: url('<?php Theme::thumbnail_url(); ?>');">
-        <?php Theme::thumbnail_country(); ?>
+    <div style="position: relative;">
+      <?php Theme::thumbnail_country(); ?>
+      <div onclick="location.href='<?php the_permalink(); ?>';" class="wire-loop-thumbnail-container container mb-3" style="cursor: pointer; background-image: url('<?php Theme::thumbnail_url(); ?>');">
       </div>
-    </a>
+    </div>
     <!-- /post thumbnail -->
     <div class="wirefm-bleft">
       <!-- post title -->
