@@ -4,7 +4,7 @@
   <section>
     <div class="wirefm-category-title">
       <div class="container py-3">
-        <h1 class="main"><?php post_type_archive_title(); ?></h1>
+        <h1 class="main"><?php echo _e( post_type_archive_title( '', false ), 'wire' ); ?></h1>
       </div>
     </div>
     <!-- container -->

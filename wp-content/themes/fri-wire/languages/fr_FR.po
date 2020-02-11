@@ -115,3 +115,10 @@ msgstr "Dépêche"
 #: tag.php:7
 msgid "Stories tagged: "
 msgstr "Nouvelles marquées : "
+
+msgid "Script of the week"
+msgstr "Texte radiophonique"
+
+msgid "Farmer stories"
+msgstr "Nouvelles"
+
