@@ -58,7 +58,7 @@ class Theme
     }
 
     function translations() {
-        if ( function_exists( 'pll_current_language' ) ) {
+        if ( function_exists( 'pll__' ) ) {
             $languages = pll_the_languages( array( 'raw' => 1 ) );
             $out = '';
             foreach($languages as $language) {
@@ -66,7 +66,7 @@ class Theme
                     $str = 'This story is also available in ' . $language['name'];
                     $out .= '<li>';
                     $out .= '<b><a href="' . $language['url'] . '">';
-                    $out .= __( $str );
+                    $out .= pll__( $str, 'wire' );
                     $out .= '</b></a>';
                     $out .= '</li>';
                 }

@@ -56,7 +56,7 @@
             <?php endif; ?>
           <?php if ( metadata_exists( 'post', get_the_ID(), 'News Brief' ) ): ?>
           <div class="wirefm-news-brief">
-            <h2 class="wirefm-section-header"><?php _e( 'News Brief' ); ?></h2>
+            <h2 class="wirefm-section-header"><?php _e( 'News Brief', 'wire' ); ?></h2>
             <p>
               <?php echo get_post_meta( get_the_ID(), 'News Brief', true ); ?>
             </p>

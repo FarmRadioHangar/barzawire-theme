@@ -138,6 +138,10 @@ nav.wirefm-language-nav .nav .nav-item {
   min-height: 70px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.72);
+}
+
 .wirefm-main-nav .navbar-nav .nav-item {
   font-size: 1em;
 }
