@@ -365,6 +365,12 @@ p.meta {
   position: relative;
 }
 
+@media (min-width: 992px) {
+  .wirefm-post-image {
+    min-height: 450px !important;
+  }
+}
+
 .wirefm-post-title {
   margin-top: -300px;
   padding-top: 150px;

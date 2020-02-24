@@ -51,7 +51,10 @@
           <?php endif; ?>
             <?php if ( function_exists('wp_print' ) ):  ?>
               <p style="float: right; margin-top: -3em;">
-                <?php print_link(); ?>
+                <?php /* <?php print_link(); ?> */ ?>
+                <a href="<?php echo get_permalink( get_queried_object_id() ) ?>/print">
+                  <?php _e( 'Download this story', 'wire' ) ?>
+                </a>
               </p>
             <?php endif; ?>
           <?php if ( metadata_exists( 'post', get_the_ID(), 'News Brief' ) ): ?>
